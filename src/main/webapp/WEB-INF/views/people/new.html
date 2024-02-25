@@ -7,8 +7,10 @@
 <body>
 
 <form th:method="POST" th:action="@{/people}" th:object="${person}">
-    <label for="name">Enter name: </label>
-    <input type="text" th:field="*{name}" id="name"/>
+    <!--th:action="@{/people}" - address, where data will be sent from this form (action="/people" without thymeleaf)-->
+    <!--th:object="${person}" - new empty person that had been passed to this form in controller-->
+    <label for="name">Enter name: </label> <!-- for="name"  ==  id="name" (in input) -->
+    <input type="text" th:field="*{name}" id="name"/>  <!-- th:field="*{name}" - use field of class Person. attribute "id" - for label creation-->
     <br/>
     <input type="submit" value="Create!">
 </form>

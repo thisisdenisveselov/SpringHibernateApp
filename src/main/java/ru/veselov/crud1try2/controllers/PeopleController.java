@@ -33,14 +33,16 @@ public class PeopleController {
 
     @GetMapping("/new")
    // public String newPerson(Model model) {
-    public String newPerson(@ModelAttribute("person") Person person) {
-     //   model.addAttribute("person", new Person());
+    public String newPerson(@ModelAttribute("person") Person person) { //creates an empty object of the class Person with an empty constructor and adds it to the model
+     //   model.addAttribute("person", new Person());  // if we use thymeleaf, we must pass an object that used in this form(add an object to model)
         return "people/new";
     }
 
     @PostMapping()
-    public String create(@ModelAttribute("person") Person person) {
-        personDAO.save(person);
+    public String create(@ModelAttribute("person") Person person) {//creates an empty object of the class Person, get data from field. set data to the object. Adds an object to the model
+        // creates new person and fill him with data from form
+        //
+        personDAO.save(person); // add person to database
         return "redirect:/people";
     }
 }
