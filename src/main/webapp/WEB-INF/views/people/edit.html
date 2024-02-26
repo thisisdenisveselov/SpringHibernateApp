@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+
+<form th:method="PATCH" th:action="@{/people/{id}(id=${person.getId()})}" th:object="${person}">  <!--method="PATCH" won't work because html5 doesn't support PATCH method(only if we use thymeleaf) -->
+    <!--thymeleaf will take this field, create hidden field with PATCH value. This hidden field we can read on spring side with the help of a filter-->
+
+    <!--th:action="@{/people}" - address, where data will be sent from this form (action="/people" without thymeleaf)-->
+    <!--th:object="${person}" - new empty person that had been passed to this form in controller-->
+    <label for="name">Enter name: </label> <!-- for="name"  ==  id="name" (in input) -->
+    <input type="text" th:field="*{name}" id="name"/>  <!-- th:field="*{name}" - use field of class Person. attribute "id" - for label creation-->
+    <br/>
+    <input type="submit" value="Update!">
+</form>
+
+</body>
+</html>
