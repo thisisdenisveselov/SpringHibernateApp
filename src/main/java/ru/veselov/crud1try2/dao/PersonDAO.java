@@ -18,8 +18,10 @@ public class PersonDAO {
     }
 
     public List<Person> index() {
+        System.out.println("");
         return jdbcTemplate.query("SELECT * FROM person", new BeanPropertyRowMapper<>(Person.class));
         //new PersonMapper()); we don't need custom RowMapper, because our columns names are identical to fields names in Person class
+
     }
 
 
