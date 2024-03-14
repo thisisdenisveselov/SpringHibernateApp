@@ -18,7 +18,7 @@
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
 
-    <spring.version>5.2.1.RELEASE</spring.version>
+    <spring.version>5.3.5</spring.version>
     <hibernate.version>5.4.28.Final</hibernate.version>
   </properties>
 
@@ -72,18 +72,21 @@
       <version>4.0.1</version>
       <scope>provided</scope>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
+
     <dependency>
       <groupId>org.hibernate.validator</groupId>
       <artifactId>hibernate-validator</artifactId>
-      <version>6.2.0.Final</version>
+      <version>6.1.6.Final</version>
     </dependency>
+
     <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
     <dependency>
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
-      <version>42.7.2</version>
+      <version>42.2.18</version>
     </dependency>
+
+    <!--ORM Related dependencies -->
 
     <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
     <dependency>
@@ -99,10 +102,17 @@
       <version>${spring.version}</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa -->
+    <dependency>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-jpa</artifactId>
+      <version>2.4.7</version>
+    </dependency>
+
   </dependencies>
 
   <build>
-    <finalName>CRUD_App1_try2</finalName>
+    <finalName>spring-mvc-app1</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>

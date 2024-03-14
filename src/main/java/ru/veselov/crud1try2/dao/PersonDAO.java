@@ -13,6 +13,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
+//  UNUSED CLASS. We use PeopleService instead
 @Component
 public class PersonDAO {
 
